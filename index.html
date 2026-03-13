@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Spandhana! 🎂✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Nunito:wght@300;400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ff6eb4;
+    --hot-pink: #ff3d9a;
+    --light-pink: #ffd6ec;
+    --peach: #ffb3d1;
+    --lilac: #e8b4f8;
+    --lavender: #f3e0ff;
+    --gold: #ffd700;
+    --cream: #fff9fb;
+    --choco: #7b3f00;
+    --rose: #ff85a1;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💖%3C/text%3E%3C/svg%3E") 16 16, auto;
+  }
+
+  /* ===== FLOATING HEARTS BG ===== */
+  .hearts-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; overflow: hidden;
+  }
+  .heart-float {
+    position: absolute; bottom: -50px; font-size: 1.5rem;
+    animation: floatUp linear infinite;
+    opacity: 0.4;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ===== HERO SECTION ===== */
+  #hero {
+    position: relative; min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f7 0%, #ffe4f3 30%, #f8d7ff 60%, #ffe8f5 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 2rem; overflow: hidden;
+  }
+
+  .confetti-hero { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  .star-ring {
+    font-size: 2rem; letter-spacing: 0.5rem;
+    animation: spin 8s linear infinite;
+    display: inline-block; margin-bottom: 1rem;
+  }
+  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+  .hero-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.5rem, 12vw, 8rem);
+    background: linear-gradient(135deg, var(--hot-pink), var(--lilac), var(--gold));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    animation: titlePop 1s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    line-height: 1.1; margin-bottom: 0.5rem;
+    filter: drop-shadow(0 4px 20px rgba(255,61,154,0.3));
+  }
+  @keyframes titlePop { 0% { transform: scale(0) rotate(-10deg); opacity: 0; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 4.5vw, 2.4rem);
+    color: var(--hot-pink);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 1s 0.5s both;
+  }
+    animation: fadeInUp 1s 0.5s both;
+  }
+
+  .emoji-parade {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    letter-spacing: 0.3rem;
+    animation: fadeInUp 1s 0.8s both;
+    margin-bottom: 2rem;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--hot-pink), var(--lilac));
+    color: white; padding: 0.8rem 2rem; border-radius: 50px;
+    font-family: 'Great Vibes', cursive; font-size: 1.4rem;
+    box-shadow: 0 8px 30px rgba(255,61,154,0.4);
+    animation: fadeInUp 1s 1s both, pulse 2s 2s infinite;
+    cursor: pointer; text-decoration: none;
+    border: 3px solid rgba(255,255,255,0.5);
+  }
+  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  .scroll-hint {
+    position: absolute; bottom: 2rem;
+    font-size: 2rem; animation: bounce 1.5s infinite;
+    color: var(--pink);
+  }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  /* ===== SECTION BASE ===== */
+  section { position: relative; z-index: 1; }
+
+  .section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    background: linear-gradient(135deg, var(--hot-pink), var(--lilac));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center; margin-bottom: 3rem;
+    filter: drop-shadow(0 2px 10px rgba(255,61,154,0.2));
+  }
+
+  /* ===== LETTER SECTION ===== */
+  #letter {
+    padding: 6rem 2rem;
+    background: linear-gradient(160deg, #fff5fb 0%, #f8e8ff 100%);
+  }
+
+  .letter-envelope {
+    max-width: 750px; margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    padding: 3.5rem;
+    box-shadow: 0 20px 80px rgba(255,61,154,0.15), 0 0 0 4px var(--light-pink);
+    position: relative;
+    border: 2px solid var(--peach);
+  }
+
+  .letter-envelope::before {
+    content: '💌';
+    position: absolute; top: -2rem; left: 50%; transform: translateX(-50%);
+    font-size: 3.5rem; filter: drop-shadow(0 4px 10px rgba(255,61,154,0.3));
+  }
+
+  .letter-date {
+    text-align: right; color: var(--pink);
+    font-style: italic; margin-bottom: 1.5rem; font-size: 0.95rem;
+  }
+
+  .letter-greeting {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.6rem; color: var(--hot-pink);
+    margin-bottom: 1.5rem;
+  }
+
+  .letter-body {
+    line-height: 2.1; color: #555; font-size: 1.08rem;
+    font-family: 'Nunito', sans-serif; font-weight: 500;
+  }
+
+  .letter-body p { margin-bottom: 1.2rem; }
+
+  .letter-sig {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem; color: var(--hot-pink);
+    text-align: right; margin-top: 2rem;
+  }
+
+  .letter-deco {
+    text-align: center; font-size: 1.5rem;
+    margin: 1.5rem 0; letter-spacing: 0.5rem;
+  }
+
+  .highlight {
+    background: linear-gradient(120deg, #ffd6ec 0%, #ffd6ec 100%);
+    padding: 2px 6px; border-radius: 4px;
+    color: var(--hot-pink); font-weight: 600;
+  }
+
+  /* ===== GALLERY SECTION ===== */
+  #gallery {
+    padding: 6rem 2rem;
+    background: linear-gradient(160deg, #fff0f9 0%, #f0e8ff 100%);
+  }
+
+  .gallery-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .gallery-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(255,61,154,0.1);
+    border: 2px solid var(--light-pink);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+
+  .gallery-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, var(--hot-pink), var(--lilac), var(--gold));
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 25px 60px rgba(255,61,154,0.25);
+  }
+
+  .gallery-emoji { font-size: 4rem; margin-bottom: 1rem; display: block; }
+
+  .gallery-card h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem; color: var(--hot-pink);
+    margin-bottom: 0.8rem;
+  }
+
+  .gallery-card p { color: #888; line-height: 1.7; font-size: 0.95rem; }
+
+  /* ===== CAKE SECTION ===== */
+  #cake {
+    padding: 6rem 2rem;
+    background: linear-gradient(160deg, #fff5fb 0%, #ffe8f0 100%);
+    text-align: center; overflow: hidden;
+  }
+
+  .cake-wrapper {
+    position: relative; display: inline-block;
+    margin: 2rem auto;
+  }
+
+  .cake-svg-wrap {
+    position: relative; display: inline-block;
+  }
+
+  /* CAKE CSS ART */
+  .cake-art {
+    width: 280px; height: 320px;
+    margin: 0 auto; position: relative;
+  }
+
+  .cake-plate {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 240px; height: 18px; background: linear-gradient(180deg, #f8c8d8, #e8a8c0);
+    border-radius: 50%; box-shadow: 0 6px 20px rgba(255,61,154,0.3);
+  }
+
+  .cake-layer-3 {
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 65px;
+    background: linear-gradient(180deg, #ffb3d1, #ff85a1);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(255,61,154,0.3);
+  }
+  .cake-layer-3::after {
+    content: ''; position: absolute; top: -8px; left: -5px; right: -5px;
+    height: 16px; background: linear-gradient(180deg, #fff0f7, #ffd6ec);
+    border-radius: 50%; border-bottom: 3px solid #ffb3d1;
+  }
+
+  .cake-layer-2 {
+    position: absolute; bottom: 72px; left: 50%; transform: translateX(-50%);
+    width: 160px; height: 65px;
+    background: linear-gradient(180deg, #c084fc, #a855f7);
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(168,85,247,0.3);
+  }
+  .cake-layer-2::after {
+    content: ''; position: absolute; top: -8px; left: -5px; right: -5px;
+    height: 16px; background: linear-gradient(180deg, #f8e8ff, #e8d0ff);
+    border-radius: 50%; border-bottom: 3px solid #c084fc;
+  }
+
+  .cake-layer-1 {
+    position: absolute; bottom: 132px; left: 50%; transform: translateX(-50%);
+    width: 110px; height: 60px;
+    background: linear-gradient(180deg, #fb923c, #f97316);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(249,115,22,0.3);
+  }
+  .cake-layer-1::after {
+    content: ''; position: absolute; top: -8px; left: -5px; right: -5px;
+    height: 16px; background: linear-gradient(180deg, #fff7f0, #ffe4cc);
+    border-radius: 50%; border-bottom: 3px solid #fb923c;
+  }
+
+  /* Candles */
+  .candle {
+    position: absolute; bottom: 188px;
+    width: 12px; height: 38px;
+    border-radius: 6px 6px 3px 3px;
+  }
+  .candle-1 { left: calc(50% - 32px); background: linear-gradient(180deg, #ff6eb4, #ff3d9a); }
+  .candle-2 { left: calc(50% - 6px); background: linear-gradient(180deg, #a78bfa, #7c3aed); height: 44px; bottom: 188px; }
+  .candle-3 { left: calc(50% + 20px); background: linear-gradient(180deg, #34d399, #059669); }
+
+  .flame {
+    position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+    width: 14px; height: 20px;
+    background: linear-gradient(180deg, #fff176, #ffd700, #ff6b35);
+    border-radius: 50% 50% 30% 30%;
+    animation: flicker 0.6s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px 4px rgba(255,200,0,0.6);
+  }
+  @keyframes flicker {
+    0% { transform: translateX(-50%) scaleY(1) scaleX(1); }
+    100% { transform: translateX(-50%) scaleY(1.2) scaleX(0.85); }
+  }
+
+  /* Decorations */
+  .choco-dots {
+    position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+    width: 180px; display: flex; justify-content: space-around;
+  }
+  .choco-dot {
+    width: 14px; height: 14px; background: #7b3f00;
+    border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .cake-btn {
+    display: inline-block; margin-top: 3rem;
+    background: linear-gradient(135deg, var(--hot-pink), var(--lilac));
+    color: white; padding: 1.1rem 3rem; border-radius: 50px;
+    font-family: 'Great Vibes', cursive; font-size: 1.6rem;
+    box-shadow: 0 8px 30px rgba(255,61,154,0.4);
+    cursor: pointer; border: none; transition: all 0.3s;
+    border: 3px solid rgba(255,255,255,0.4);
+    animation: pulse 2s infinite;
+  }
+  .cake-btn:hover { transform: scale(1.05); }
+
+  /* ===== PARTY POPPER CANVAS ===== */
+  #confettiCanvas {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; z-index: 9999;
+    display: none;
+  }
+
+  /* ===== CELEBRATION OVERLAY ===== */
+  #celebOverlay {
+    display: none;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 61, 154, 0.92);
+    z-index: 9998;
+    align-items: center; justify-content: center;
+    flex-direction: column; text-align: center;
+    padding: 2rem;
+  }
+
+  .celeb-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 12vw, 8rem);
+    color: white;
+    text-shadow: 0 0 40px rgba(255,255,100,0.8);
+    animation: celebBounce 0.5s ease infinite alternate;
+    line-height: 1.1;
+  }
+  @keyframes celebBounce { from { transform: scale(1); } to { transform: scale(1.05); } }
+
+  .celeb-emojis { font-size: clamp(2rem, 6vw, 4rem); margin: 1rem 0; }
+
+  .celeb-close {
+    margin-top: 2rem;
+    background: white; color: var(--hot-pink);
+    padding: 0.8rem 2.5rem; border-radius: 50px;
+    font-family: 'Great Vibes', cursive; font-size: 1.5rem;
+    cursor: pointer; border: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--hot-pink), var(--lilac));
+    text-align: center; color: white;
+  }
+
+  footer h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem; margin-bottom: 1rem;
+  }
+
+  footer p { font-size: 1.1rem; opacity: 0.9; }
+
+  /* ===== FLOWER DIVIDER ===== */
+  .divider { text-align: center; font-size: 2rem; margin: 1rem 0; letter-spacing: 0.8rem; }
+
+  /* ===== ANIMATIONS ===== */
+  .reveal {
+    opacity: 1; transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.hidden {
+    opacity: 0; transform: translateY(40px);
+  }
+  .reveal.hidden.visible { opacity: 1; transform: translateY(0); }
+
+  /* Ribbon top */
+  .ribbon-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--hot-pink), var(--lilac), var(--gold), var(--peach), var(--hot-pink));
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+  @keyframes shimmer { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }
+
+  /* Message ribbon around letter */
+  .tape {
+    position: absolute; top: 2rem; right: -10px;
+    background: linear-gradient(135deg, var(--gold), #ffeaa7);
+    color: var(--choco); padding: 0.4rem 1.2rem;
+    font-family: 'Great Vibes', cursive; font-size: 1rem;
+    transform: rotate(3deg);
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+    border-radius: 4px;
+  }
+
+  .photo-frame {
+    display: inline-block;
+    padding: 12px 12px 30px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(255,61,154,0.2);
+    transform: rotate(-2deg);
+    border: 2px solid var(--light-pink);
+    font-size: 4rem;
+    border-radius: 4px;
+    transition: transform 0.3s;
+  }
+  .photo-frame:hover { transform: rotate(2deg) scale(1.05); }
+  .photo-caption {
+    display: block; text-align: center;
+    font-family: 'Great Vibes', cursive; font-size: 1rem;
+    color: var(--pink); margin-top: 0.5rem;
+  }
+
+  .photos-row {
+    display: flex; flex-wrap: wrap; gap: 2rem;
+    justify-content: center; margin-top: 2rem;
+  }
+
+  /* sparkle trail */
+  .sparkle {
+    position: fixed; pointer-events: none; z-index: 9997;
+    font-size: 1.2rem;
+    animation: sparkleFade 1s forwards;
+  }
+  @keyframes sparkleFade {
+    0% { opacity: 1; transform: scale(1) translateY(0); }
+    100% { opacity: 0; transform: scale(0.5) translateY(-40px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon-bar"></div>
+
+<!-- Floating hearts -->
+<div class="hearts-bg" id="heartsContainer"></div>
+
+<!-- Confetti canvas -->
+<canvas id="confettiCanvas"></canvas>
+
+<!-- Celebration overlay -->
+<div id="celebOverlay">
+  <div class="celeb-text">🎂 HAPPY BIRTHDAY! 🎂</div>
+  <div class="celeb-emojis">🎉🎊💖✨🥳🎈🍫💕</div>
+  <p style="color:white; font-family:'Nunito'; font-size:1.3rem; margin-top:1rem;">Wishing you the most magical day ever, queen! 👑</p>
+  <button class="celeb-close" onclick="closeCeleb()">Close 💖</button>
+</div>
+
+<!-- ========== HERO ========== -->
+<section id="hero">
+  <div class="star-ring">🌟✨🌟✨🌟</div>
+  <h1 class="hero-title">Happy Birthday!</h1>
+  <p class="hero-sub">To the most adorable <span style="-webkit-text-fill-color:var(--hot-pink)">Spandhana</span>, my lovely sister 🌸👑</p>
+  <div class="emoji-parade">🎀💕🎂🌸💖🎊✨</div>
+  <a href="#letter" class="hero-badge">Read Your Special Letter 💌</a>
+  <div class="scroll-hint">👇</div>
+</section>
+
+<!-- ========== LETTER ========== -->
+<section id="letter">
+  <h2 class="section-title reveal">A Letter Just For You 💌</h2>
+  <div class="letter-envelope reveal">
+    <div class="tape">from your lovely brother 💛</div>
+    <div class="letter-date">On This Beautiful Day 🌸✨</div>
+    <div class="letter-greeting">My Dearest Lovely Sister Spandhana, 🥺💖</div>
+    <div class="letter-deco">✿ ♡ ✿ ♡ ✿</div>
+    <div class="letter-body">
+      <p>First of all — HAPPY BIRTHDAY, you gorgeous little <span class="highlight">cupcake</span>! 🎂🧁 Today is YOUR day and I want you to feel every single bit of the love that everyone around you has for you, because honestly? You deserve the whole entire world and more 🌍💕</p>
+
+      <p>Can we just talk about how absolutely <span class="highlight">cute and innocent</span> you are?! 🥺 Like seriously, you walk into a room and everything just gets warmer and brighter ☀️ Your big beautiful eyes, that sweet smile of yours — babe, you are literally <span class="highlight">SO stunning</span> and I hope you know that every single day! 💅✨</p>
+
+      <p>And okay we HAVE to talk about your <span class="highlight">chocolate obsession</span> 🍫😂 You and chocolate have a relationship more serious than most people have with humans lmaooo 😭💀 But honestly? I get it. Chocolate understands us. Chocolate NEVER lets us down. You two are meant to be 🍫💕 And don't even get me started on the <span class="highlight">pani puri and chaat</span> era — the way your eyes light up the moment you hear "pani puri" 👀🤤 It's the most pure and wholesome thing I've ever witnessed!! You are a certified <span class="highlight">foodie queen</span> 👑🍽️</p>
+
+      <p>You are THE most talkative, bubbly, expressive person and honestly it's your superpower! 🗣️💬 The way you can talk for hours and hours and somehow every single story is interesting and funny?? That's a gift, bestie. Never stop being that girl 🌺</p>
+
+      <p>Okay now I have to say this with love 💕 — <span class="highlight">baby, please stop fighting with Mamma and Papa</span> 🙏😭 I know I know, they can be SOOO annoying sometimes and they don't understand things and argh!! But trust me, one day you'll realise they're literally doing everything out of love for you 💝 They're your biggest fans, even when it doesn't feel that way. So fewer fights, more hugs, okay? Promise me! 🤞🥺</p>
+
+      <p>And you, my emotional little sister 😭💖 — you and your tears, honestly a whole mood 🥹 After a fight with Mamma and Papa? Waterworks. Someone dares to take away your chocolate? FULL breakdown, understandable honestly 🍫😭 When people tease you? The most dramatic crying session ever and we are HERE for it 😂 And don't even get me started on how you feel when something goes not as planned — like when you got your exam centre at US Campus and the whole world was ending 💀😭 But you know what? You got through it, like you always do! And one more thing — we all KNOW Yash is yours, okay? No comparisons needed, no one even comes close 🔥👑 Your heart is SO big and SO full of feelings, and that is the most beautiful thing in the world. Don't ever let anyone make you feel like you're "too much" — you are just <span class="highlight">perfectly, wonderfully YOU</span> 🌸</p>
+
+      <p>Now Spandhana… we CANNOT write this letter without talking about your absolute obsession 😭💀 — the legendary, the iconic, the absolutely SMOULDERING <span class="highlight">YASH 🔥👑</span> OMG the way your whole personality changes the moment someone mentions KGF or his name?! Your eyes go wide, you get this dreamy look, and suddenly you're like a completely different person 😂💕 And if ANYONE dares to compare Yash to someone else — oh no no no, she is QUICK to set the record straight: "Yash is MINE okay?!" 😭👑 "Have you SEEN him though?!" YES SPANDU, WE'VE SEEN HIM, YOU SHOW US EVERY DAY 😭😂 But honestly? We get it. We completely get it. The man is FIRE 🔥✨ Your dedication, your loyalty, your absolute madness for Yash — it's genuinely iconic and we respect it SO much 👏💖 Here's to hoping you get to meet him one day and absolutely lose your mind 🥹🙏✨</p>
+
+      <p>On your birthday, I wish you endless happiness, ALL the chocolate 🍫, plates and plates of pani puri 🌮, a year SO beautiful it looks like a KGF scene 🎬🔥✨ and maybe, JUST MAYBE, a Yash sighting 😂💖 May every single day feel as special as you make everyone around you feel 💫</p>
+
+      <div class="letter-deco">🌸 💗 🌸 💗 🌸</div>
+      <p>You are loved more than all the stars in the sky 🌟, more than all the chocolate in the world 🍫, and more than words can even say 💬💖</p>
+    </div>
+    <div class="letter-sig">
+      Forever your biggest fan, your brother 💖<br>
+      With all the sisterly love in the universe 🌸✨
+    </div>
+    <div class="letter-deco" style="margin-top:1.5rem">💌 🎀 💫 🎀 💌</div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section id="gallery">
+  <h2 class="section-title reveal">Our Favourite Things About You 💕</h2>
+  <div class="gallery-grid">
+    <div class="gallery-card reveal">
+      <span class="gallery-emoji">🍫</span>
+      <h3>Choco Queen 👑</h3>
+      <p>Her love for chocolate is UNMATCHED. Dairy Milk? Gone in seconds. Truffle cake? Devoured before you can say "share please" 😂 She doesn't just eat chocolate — she has a SPIRITUAL connection with it ✨</p>
+    </div>
+    <div class="gallery-card reveal">
+      <span class="gallery-emoji">🌮</span>
+      <h3>Pani Puri Lover 💕</h3>
+      <p>The way her face TRANSFORMS the moment she smells chaat or pani puri 🤤 She could eat it for breakfast, lunch, dinner and dessert and still say "one more plate please!" That's our girl 💖</p>
+    </div>
+    <div class="gallery-card reveal">
+      <span class="gallery-emoji">🥺</span>
+      <h3>Emotional Sister 😭💕</h3>
+      <p>Cries after fighting with Mamma-Papa 😭, cries when someone takes her chocolate 🍫, cries when people tease her 😤, and don't even start about US Campus exam centre 💀😂 Her heart is literally made of pure feelings and it overflows constantly 💗</p>
+    </div>
+    </div>
+    <div class="gallery-card reveal">
+      <span class="gallery-emoji">✨</span>
+      <h3>Glowing Beauty 💅</h3>
+      <p>Absolutely stunning without even trying. That natural glow, that smile that lights up ROOMS 🌟 She doesn't just walk into places — she ARRIVES. Every single time 👸💕</p>
+    </div>
+    <div class="gallery-card reveal">
+      <span class="gallery-emoji">🗣️</span>
+      <h3>Chatterbox Queen 💬</h3>
+      <p>Could talk to literally ANYONE about literally ANYTHING for literally HOURS and somehow make it the most entertaining conversation 😂 Her energy is contagious and her stories? Chef's kiss 🤌💕</p>
+    </div>
+    <div class="gallery-card reveal">
+      <span class="gallery-emoji">🔥👑</span>
+      <h3>Yash's #1 Fan 💀😂</h3>
+      <p>Her entire personality goes into a different MODE the moment KGF plays or someone says "Yash" 😭💕 She has watched his scenes approximately 847 times and counting. The dedication? Unmatched. The obsession? Legendary. We stan a loyal queen 👸🔥</p>
+    </div>
+      <p>She researches restaurants the way others research career moves 😂 "Where are we eating?" is her love language. Food is her passion, her comfort, her EVERYTHING 💖 And honestly, same 🙈</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 4rem; text-align:center;" class="reveal">
+    <h3 class="section-title" style="font-size:2.5rem;">Memory Polaroids 📸</h3>
+    <div class="photos-row">
+      <div>
+        <div class="photo-frame">🥺💕</div>
+        <span class="photo-caption">When she cries at EVERYTHING 😭</span>
+      </div>
+      <div>
+        <div class="photo-frame">🍫😍</div>
+        <span class="photo-caption">Her & chocolate 🍫 4ever</span>
+      </div>
+      <div>
+        <div class="photo-frame">🌮🤤</div>
+        <span class="photo-caption">Pani Puri o'clock!</span>
+      </div>
+      <div>
+        <div class="photo-frame">💅✨</div>
+        <span class="photo-caption">Being effortlessly stunning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CAKE SECTION ========== -->
+<section id="cake">
+  <h2 class="section-title reveal">Time to Cut the Cake! 🎂🎉</h2>
+  <p style="color:var(--pink); font-size:1.2rem; font-family:'Great Vibes', cursive; font-size:1.6rem; margin-bottom:1rem;" class="reveal">Click the button below and make a wish! 🌟</p>
+
+  <div class="cake-wrapper reveal">
+    <div class="cake-art">
+      <!-- Candles -->
+      <div class="candle candle-1">
+        <div class="flame"></div>
+      </div>
+      <div class="candle candle-2">
+        <div class="flame"></div>
+      </div>
+      <div class="candle candle-3">
+        <div class="flame"></div>
+      </div>
+      <!-- Layers -->
+      <div class="cake-layer-1"></div>
+      <div class="cake-layer-2"></div>
+      <div class="cake-layer-3"></div>
+      <!-- Choco dots -->
+      <div class="choco-dots">
+        <div class="choco-dot"></div>
+        <div class="choco-dot"></div>
+        <div class="choco-dot"></div>
+        <div class="choco-dot"></div>
+        <div class="choco-dot"></div>
+      </div>
+      <!-- Plate -->
+      <div class="cake-plate"></div>
+    </div>
+  </div>
+
+  <br>
+  <button class="cake-btn" onclick="cutCake()">🎂 Cut the Cake! 🎉</button>
+  <p style="color:#bbb; margin-top:1.5rem; font-size:0.9rem;">psst… something magical happens ✨</p>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <h2>Happy Birthday, Lovely Sister! 🎀</h2>
+  <div style="font-size:2.5rem; margin: 1rem 0">🎂💖🎉✨🌸🥳💫🍫🌟</div>
+  <p>May this year bring you all the chocolate 🍫, all the pani puri 🌮,<br>
+  all the love 💕, and all the happiness your big heart can hold 🥺✨</p>
+  <p style="margin-top:1rem; font-family:'Great Vibes', cursive; font-size:1.5rem">You are so incredibly loved by your brother 💖</p>
+  <div style="margin-top:2.5rem; display:inline-block; text-align:center; background:linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,180,230,0.18)); border:2px solid rgba(255,255,255,0.55); border-radius:32px; padding:1.8rem 3.5rem; backdrop-filter:blur(12px); box-shadow:0 8px 40px rgba(255,61,154,0.25), inset 0 0 30px rgba(255,255,255,0.08);">
+    <p style="font-family:'Quicksand', sans-serif; font-size:0.78rem; font-weight:700; opacity:0.85; margin-bottom:0.6rem; letter-spacing:5px; text-transform:uppercase;">🌸 crafted with love 🌸</p>
+    <p style="font-family:'Dancing Script', cursive; font-size:1.4rem; font-weight:400; opacity:0.9; margin-bottom:0.2rem; letter-spacing:1px;">by the one and only</p>
+    <p style="font-family:'Dancing Script', cursive; font-size:4.5rem; font-weight:700; line-height:1; background:linear-gradient(135deg, #fff 0%, #ffe4f3 30%, #ffd700 60%, #fff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; filter:drop-shadow(0 0 18px rgba(255,230,100,0.95)); letter-spacing:3px;">Daksh</p>
+    <p style="font-family:'Dancing Script', cursive; font-size:1.3rem; opacity:0.9; margin-top:0.6rem;">💖 because my sister deserves the whole world 🌍✨</p>
+  </div>
+</footer>
+
+<script>
+// ========== FLOATING HEARTS ==========
+const heartsContainer = document.getElementById('heartsContainer');
+const emojis = ['💖','💕','🌸','✨','💗','💓','🌺','💫','🎀','🌷'];
+for(let i = 0; i < 20; i++) {
+  const heart = document.createElement('div');
+  heart.className = 'heart-float';
+  heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+  heart.style.left = Math.random() * 100 + '%';
+  heart.style.animationDuration = (6 + Math.random() * 10) + 's';
+  heart.style.animationDelay = (Math.random() * 10) + 's';
+  heart.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+  heartsContainer.appendChild(heart);
+}
+
+// ========== SPARKLE ON MOUSE ==========
+document.addEventListener('mousemove', (e) => {
+  if(Math.random() > 0.85) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.textContent = ['✨','💖','🌸','⭐','💫'][Math.floor(Math.random()*5)];
+    s.style.left = e.clientX + 'px';
+    s.style.top = e.clientY + 'px';
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 1000);
+  }
+});
+
+// ========== SCROLL REVEAL ==========
+const revealEls = document.querySelectorAll('.reveal');
+revealEls.forEach(el => el.classList.add('hidden'));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.remove('hidden'); e.target.classList.add('visible'); } });
+}, { threshold: 0.05 });
+revealEls.forEach(el => observer.observe(el));
+
+// ========== CONFETTI ==========
+const canvas = document.getElementById('confettiCanvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let animId;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const confColors = ['#ff3d9a','#ff6eb4','#ffd700','#c084fc','#34d399','#f97316','#ffd6ec','#fff176','#ff85a1','#a78bfa'];
+const confEmojis = ['🎊','🎉','💖','✨','🌸','🍫','🎀','💕','⭐','🎈'];
+
+function createParticle(x, y) {
+  return {
+    x, y,
+    vx: (Math.random() - 0.5) * 14,
+    vy: -(Math.random() * 18 + 8),
+    size: Math.random() * 10 + 6,
+    color: confColors[Math.floor(Math.random() * confColors.length)],
+    emoji: Math.random() > 0.5 ? confEmojis[Math.floor(Math.random() * confEmojis.length)] : null,
+    rotation: Math.random() * 360,
+    rotSpeed: (Math.random() - 0.5) * 8,
+    gravity: 0.5,
+    life: 1,
+    decay: Math.random() * 0.012 + 0.008,
+    shape: Math.floor(Math.random() * 3)
+  };
+}
+
+function burst(x, y, count) {
+  for(let i = 0; i < count; i++) particles.push(createParticle(x, y));
+}
+
+function animateConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles = particles.filter(p => p.life > 0);
+  particles.forEach(p => {
+    p.x += p.vx; p.y += p.vy; p.vy += p.gravity;
+    p.vx *= 0.99; p.rotation += p.rotSpeed;
+    p.life -= p.decay;
+    ctx.save(); ctx.globalAlpha = p.life;
+    ctx.translate(p.x, p.y); ctx.rotate(p.rotation * Math.PI / 180);
+    if(p.emoji) {
+      ctx.font = p.size * 2 + 'px serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(p.emoji, 0, 0);
+    } else {
+      ctx.fillStyle = p.color;
+      if(p.shape === 0) { ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size); }
+      else if(p.shape === 1) { ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      else { ctx.beginPath(); ctx.moveTo(0,-p.size/2); ctx.lineTo(p.size/2,p.size/2); ctx.lineTo(-p.size/2,p.size/2); ctx.closePath(); ctx.fill(); }
+    }
+    ctx.restore();
+  });
+  if(particles.length > 0) animId = requestAnimationFrame(animateConfetti);
+  else { canvas.style.display = 'none'; }
+}
+
+// ========== CAKE CUT ==========
+function cutCake() {
+  canvas.style.display = 'block';
+  // Big burst from center and sides
+  burst(window.innerWidth/2, window.innerHeight/2, 120);
+  burst(window.innerWidth*0.2, window.innerHeight*0.4, 60);
+  burst(window.innerWidth*0.8, window.innerHeight*0.4, 60);
+  burst(window.innerWidth*0.5, window.innerHeight*0.8, 80);
+  cancelAnimationFrame(animId);
+  animateConfetti();
+
+  // Show celebration after short delay
+  setTimeout(() => {
+    const overlay = document.getElementById('celebOverlay');
+    overlay.style.display = 'flex';
+    // More confetti bursts
+    for(let i = 0; i < 5; i++) {
+      setTimeout(() => {
+        burst(Math.random() * window.innerWidth, Math.random() * window.innerHeight * 0.5, 50);
+      }, i * 400);
+    }
+  }, 800);
+}
+
+function closeCeleb() {
+  document.getElementById('celebOverlay').style.display = 'none';
+}
+
+// ========== PERIODIC CONFETTI RAIN ==========
+setInterval(() => {
+  if(particles.length < 20) {
+    canvas.style.display = 'block';
+    burst(Math.random() * window.innerWidth, -20, 5);
+    if(!animId || particles.length === 0) animateConfetti();
+  }
+}, 3000);
+</script>
+</body>
+  </html>
